@@ -5,7 +5,7 @@ inputs:
     description: release branch to cherry pick to
     required: true
   email:
-    description: email for cherry picking 
+    description: email for cherry picking
     required: true
   name:
     description: user name for cherry picking
