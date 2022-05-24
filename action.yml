@@ -20,6 +20,5 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - id: cherrypick
-      run: cherrypick.sh #${{ inputs.release }} ${{ inputs.email }} ${{ inputs.name }}
+    - run: entrypoint.sh #${{ inputs.release }} ${{ inputs.email }} ${{ inputs.name }}
       shell: bash
