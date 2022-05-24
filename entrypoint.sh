@@ -1,6 +1,6 @@
-﻿echo "hello"
-##!/bin/sh -l
-#
+﻿##!/bin/sh -l
+echo "hello"
+
 #release=$1
 #email=$2
 #name=$3
