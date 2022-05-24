@@ -20,5 +20,5 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: entrypoint.sh #${{ inputs.release }} ${{ inputs.email }} ${{ inputs.name }}
+    - run: ${{ github.action_path }}/entrypoint.sh #${{ inputs.release }} ${{ inputs.email }} ${{ inputs.name }}
       shell: bash
