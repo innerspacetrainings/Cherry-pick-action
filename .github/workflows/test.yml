@@ -1,16 +1,16 @@
-﻿name: PR for release branch
-on:
-  push:
-    branches:
-      - main
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    name: release_pull_request
-    steps:
-      - name: Test action
-        uses: innerspacetrainings/Cherry-pick-action@main
-        with:
-          release: release/v1.5.0
-          email: dev@innerspace.at
-          name: inspdevtools
+﻿#name: PR for release branch
+#on:
+#  push:
+#    branches:
+#      - main
+#jobs:
+#  test:
+#    runs-on: ubuntu-latest
+#    name: release_pull_request
+#    steps:
+#      - name: Test action
+#        uses: innerspacetrainings/Cherry-pick-action@main
+#        with:
+#          release: release/v1.5.0
+#          email: dev@innerspace.at
+#          name: inspdevtools

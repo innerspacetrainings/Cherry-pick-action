@@ -20,5 +20,6 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/entrypoint.sh #${{ inputs.release }} ${{ inputs.email }} ${{ inputs.name }}
+    - id: cherrypick
+      run: ${{ github.action_path }}/entrypoint.sh ${{ inputs.release }} ${{ inputs.email }} ${{ inputs.name }}
       shell: bash
