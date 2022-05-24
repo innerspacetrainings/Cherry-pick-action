@@ -1,0 +1,25 @@
+﻿name: some GitHub workflow yaml file
+description: some workflow description
+inputs:
+  release:
+    description: release branch to cherry pick to
+    required: true
+  email:
+    description: email for cherry picking 
+    required: true
+  name:
+    description: user name for cherry picking
+    required: true
+outputs:
+  create-pr:
+    description: whether to create a PR to release
+    value: ${{ steps.cherrypick.outputs.create-pr }}
+  branch-name:
+    description: name of branch
+    value: ${{ steps.cherrypick.outputs.branch-name }}
+runs:
+  using: "composite"
+  steps:
+    - id: cherrypick
+      run: cherrypick.sh ${release} ${email} ${name}
+      shell: bash
