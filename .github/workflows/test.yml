@@ -15,8 +15,8 @@ jobs:
           release: release/v1.5.0
           email: dev@innerspace.at
           name: inspdevtools
-      - name: something
+      - name: Print status
+        if: steps.cherrypick.outputs.success == 'false'
         run: |
-          echo ${{ steps.cherrypick.outputs.create-pr }}
-          echo ${{ steps.cherrypick.outputs.branch-name }}
+          echo ${{ steps.cherrypick.outputs.success }}
         shell: bash

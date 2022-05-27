@@ -15,20 +15,15 @@ else
   git checkout "${release}"
   git config user.email "${email}"
   git config user.name "${name}"
-  CP=$(git cherry-pick "${commit}")
-  echo "Cherry pick complete ${CP}"
+  git cherry-pick "${commit}"
   CONFLICTS=$(git ls-files -u | wc -l)
   if [ "$CONFLICTS" -gt 0 ] ; then
     echo "There is a merge conflict. Aborting cherry pick."
     git cherry-pick --abort
-    branchName="test"
-    git branch ${branchName} "${commit}"
-    git push origin ${branchName}
-    echo ::set-output name=branch-name::"${branchName}"
-    echo ::set-output name=create-pr::"false"
+    echo ::set-output name=success::false
   else
     echo "Cherry pick successful, pushing."
     git push -u origin "${release}"
-    echo ::set-output name=create-pr::"true"
+    echo ::set-output name=success::true
   fi
 fi

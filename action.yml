@@ -11,12 +11,9 @@ inputs:
     description: user name for cherry picking
     required: true
 outputs:
-  create-pr:
-    description: whether to create a PR to release
-    value: ${{ steps.cherrypick.outputs.create-pr }}
-  branch-name:
-    description: name of branch
-    value: ${{ steps.cherrypick.outputs.branch-name }}
+  success:
+    description: whether cherry pick is successful
+    value: ${{ steps.cherrypick.outputs.success }}
 runs:
   using: "composite"
   steps:
