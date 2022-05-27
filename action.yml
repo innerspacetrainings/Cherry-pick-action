@@ -1,5 +1,5 @@
-﻿name: some GitHub workflow yaml file
-description: some workflow description
+﻿name: A GitHub workflow yaml file for cherry picking
+description: Cherry picks commit to a given branch
 inputs:
   release:
     description: release branch to cherry pick to
